@@ -1,0 +1,21 @@
+.studentlist-container {
+    padding: 20px;
+  }
+  
+  .studentlist-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .studentlist-table th, .studentlist-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .studentlist-table th {
+    background-color: #6a0dad;
+    color: white;
+  }
+  

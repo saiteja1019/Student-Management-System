@@ -1,0 +1,29 @@
+.addstudent-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .addstudent-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    margin: auto;
+  }
+  
+  .addstudent-container input, .addstudent-container button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .addstudent-container button {
+    background-color: #6a0dad;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .addstudent-container button:hover {
+    background-color: #550e8e;
+  }
+  

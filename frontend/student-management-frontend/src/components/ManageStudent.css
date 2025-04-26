@@ -1,0 +1,33 @@
+.manage-container {
+    padding: 20px;
+  }
+  
+  .manage-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .manage-table th, .manage-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .manage-table th {
+    background-color: #6a0dad;
+    color: white;
+  }
+  
+  .manage-table button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #6a0dad;
+  }
+  
+  .manage-table button:hover {
+    background-color: #550e8e;
+  }
+  
