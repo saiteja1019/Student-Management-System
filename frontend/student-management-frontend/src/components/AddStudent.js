@@ -4,7 +4,7 @@ import './AddStudent.css';
 
 function AddStudent() {
   const [student, setStudent] = useState({
-    rollNumber: '',  // <-- change here
+    studentId: '',  // ✅ studentId not rollNumber
     firstName: '',
     lastName: '',
     email: '',
@@ -22,7 +22,7 @@ function AddStudent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!student.rollNumber || !student.firstName || !student.lastName || !student.email || !student.dob || !student.department || !student.enrollmentYear) {
+    if (!student.studentId || !student.firstName || !student.lastName || !student.email || !student.dob || !student.department || !student.enrollmentYear) {
       alert("Please fill in all the fields.");
       return;
     }
@@ -32,7 +32,7 @@ function AddStudent() {
       if (response.status === 201) {
         alert('Student added successfully!');
         setStudent({
-          rollNumber: '',
+          studentId: '',
           firstName: '',
           lastName: '',
           email: '',
@@ -44,8 +44,8 @@ function AddStudent() {
       }
     } catch (error) {
       console.error('Error adding student:', error);
-      if (error.response && error.response.data) {
-        alert(`Failed to add student. Error: ${error.response.data.error}`);
+      if (error.response && error.response.data && (error.response.data.error || error.response.data.message)) {
+        alert(`Failed to add student. Error: ${error.response.data.error || error.response.data.message}`);
       } else {
         alert('Failed to add student. Please try again later.');
       }
@@ -56,7 +56,7 @@ function AddStudent() {
     <div className="addstudent-container">
       <h2>Add Student</h2>
       <form onSubmit={handleSubmit}>
-        <input name="rollNumber" value={student.rollNumber} onChange={handleChange} placeholder="Roll Number" required />
+        <input name="studentId" value={student.studentId} onChange={handleChange} placeholder="Student ID" required />
         <input name="firstName" value={student.firstName} onChange={handleChange} placeholder="First Name" required />
         <input name="lastName" value={student.lastName} onChange={handleChange} placeholder="Last Name" required />
         <input name="email" value={student.email} onChange={handleChange} placeholder="Email" type="email" required />
@@ -74,4 +74,5 @@ function AddStudent() {
 }
 
 export default AddStudent;
+
 
