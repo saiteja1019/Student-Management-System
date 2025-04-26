@@ -26,7 +26,7 @@ function ManageStudents() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/students`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/students/${id}`);
       fetchStudents();
     } catch (error) {
       console.error(error);
