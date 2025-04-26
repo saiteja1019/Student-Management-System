@@ -21,7 +21,7 @@ function EditStudent() {
   // Memoized function to fetch the student data
   const fetchStudent = useCallback(async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/student/${id}`);
+      const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/students/${id}`);
       setStudent(res.data);
     } catch (error) {
       console.error(error);
@@ -41,7 +41,7 @@ function EditStudent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/student/${id}`, student);
+      await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/students/${id}`, student);
       alert('Student updated successfully!');
       navigate('/manage-students');
     } catch (error) {
